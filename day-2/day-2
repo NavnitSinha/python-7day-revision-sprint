@@ -1,0 +1,61 @@
+Day 2: Functions + Lists/Dictionaries
+  
+📘 Topics: 
+
+- def, return, parameters
+- List operations: append, pop, slice, loop
+- Dictionary basics: key-value pairs, .get(), .items()
+
+🔁 Core Examples:
+
+1. Function Basics
+
+def greet(name):
+    return f"Hello, {name}!"
+print(greet("Navnit"))  # → Hello, Navnit!
+      
+2. List Practice
+
+fruits = ["apple", "banana", "cherry"]
+fruits.append("mango")
+print(fruits[1:])  # → ['banana', 'cherry', 'mango']
+      
+3. Dictionary Basics
+
+student = {"name": "Asha", "score": 88}
+print(student["name"])     # → Asha
+print(student.get("grade", "Not available"))
+
+
+What is a dictionary in Python?
+It’s a way to store data as key-value pairs. Think of it like a labeled box:
+
+student = {
+    "name": "Asha",
+    "score": 88
+}
+
+Here:
+"name" is a key, "Asha" is its value
+"score" is a key, 88 is the value
+
+📌 Accessing Data:
+
+1. Using square brackets []:
+
+print(student["name"])
+This pulls the value for "name" → prints Asha
+
+2. Using .get() method:
+
+print(student.get("grade", "Not available"))
+"grade" doesn’t exist in the dictionary.
+
+So .get() safely returns the default value "Not available" instead of crashing.
+If you used:
+print(student["grade"])  # ❌ this would throw a KeyError!
+
+✅ Why .get() is better sometimes:
+It avoids errors when the key might not be there.
+
+

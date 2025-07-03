@@ -1,0 +1,58 @@
+Day 3: File + Error Handling
+  
+📘 Topics for Today:
+  
+Reading and writing .txt and .csv files using open()
+Using with open(...) as f: for safe file operations
+Modes: "r", "w", "a", "r+"
+Try-except blocks for catching common errors
+Bonus: Catching specific exceptions (FileNotFoundError, ValueError, etc.)
+
+Step 1: Writing to a Text File
+
+with open("notes.txt", "w") as f:
+    f.write("This is Day 3 of the Python Sprint!\n")
+    f.write("We're learning how to work with files.\n")
+"w" mode = write
+Creates the file if it doesn’t exist
+Overwrites content if it does exist
+
+📖 Step 2: Reading from a File
+
+with open("notes.txt", "r") as f:
+    content = f.read()
+    print("📄 File Content:\n", content)
+  
+🧱 Step 3: Append Mode
+
+with open("notes.txt", "a") as f:
+    f.write("New line added to the file!\n")
+  
+🚨 Step 4: Error Handling (Try-Except)
+
+try:
+    with open("notes.txt", "r") as f:
+        print(f.read())
+except FileNotFoundError:
+    print("❌ File not found!")
+      
+🧠 Concepts Used:
+with open() handles auto-close ✅
+"w" = write, "r" = read, "a" = append ✅
+try-except avoids crash if file is missing ✅
+
+🔥 What You Can Do With File Handling:
+  
+Use Case	Method
+Save data permanently	with open("file.txt", "w") or "a"
+Read config files or logs	with open("file.txt", "r")
+Work with CSV/Excel data	import csv, pandas, or open()
+Store user input or progress	Write to a .txt or .json file
+Build scripts that process files	Loop over filenames with os
+
+  📦 Why It’s Powerful:
+  
+Works offline — no database required
+Makes your Python programs stateful
+Gives you clean separation between logic and data
+And paired with error handling, your script can survive bad input, missing files, etc. — just like a real app.
